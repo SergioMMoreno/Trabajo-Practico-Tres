@@ -1,0 +1,319 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/portada.jpg);
+    background-repeat: no-repeat;
+    background-color: #f6f6f6;
+}
+hr{
+    border: 0;
+    border-top: 2px solid #5F1854;
+    margin-right: 0%;
+    width: 40%;
+}
+@font-face{
+    font-family: 'Source Sans Pro', sans-serif;
+    src: url("../font/SourceSansPro-Regular.ttf");
+}
+.nav-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 30;
+}
+
+.nav-enlace{
+    display: inline-block !important;
+    background-color: none;
+    color: #40514e;
+    padding: 10 20;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20;
+
+
+}
+.nav-enlace:after{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: #11999E;
+    transition: width .3s;
+}
+.nav-enlace:hover:after{
+    width: 100%;
+    transition: width .3s;
+}
+
+.logo{
+    width: 250;
+    height: 250;
+}
+h1{
+    padding-left: 500;
+    margin-top: 20;
+    text-align: right;
+    width: 620;
+    line-height: 50px;
+    font-size: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    animation-duration: 4s;
+    animation-name: textoprincipal;
+}
+h1 span{
+    color: #5F1854;
+}
+@keyframes textoprincipal{
+    from {
+        margin-left: 50%;
+        width: 300%;
+        width: 620;
+    }
+    to {
+       margin-left: 0%;
+       width: 200%;
+       width: 620;
+    }
+}
+
+
+.content{
+    background-image: url(../img/fondo-doos.jpg); background-repeat: no-repeat;
+    margin-top: 200;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.content img{
+    margin-left: 10%;
+}
+
+.pilares-uno{
+    height: 80%;
+    width: 33.3%;
+    min-width: 33.3%;
+}
+
+.pilares-dos{
+    height: 80%;
+    width: 33.33%;
+    max-width: 33.3%;
+}
+.pilares-tres{
+    height: 80%;
+    width: 33.33%;
+    max-width: 33.3%;
+}
+.pilares-uno:hover{
+    background-image: url(../img/uno.jpg);
+    height: 100%;
+    width: 33.33%;
+    transition: 2s;
+    background-repeat: no-repeat;
+}
+.pilares-dos:hover{
+    background-image: url(../img/dos.jpg);
+    height: 100%;
+    width: 33.33%;
+    transition: 2s;
+    background-repeat: no-repeat;
+}
+.pilares-tres:hover{
+    background-image: url(../img/tres.jpg);
+    height: 100%;
+    width: 33.33%;
+    transition: 2s;
+    background-repeat: no-repeat;
+}
+h3{
+    font-family: monospace;
+    font-weight: 500;
+    text-align: center;
+}
+.galeria{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 20%;
+    width: 500px; 
+    height: 60px;
+    font-size: 40px;
+    line-height: 50px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.galeria ul{
+    list-style: none;
+    padding-left: 10px;
+    animation: cambiar 5s infinite;
+}
+.galeria ul, p{
+    margin: 0;
+}
+.galeria p{
+    color: #11999e;
+}
+.galeria ul{
+    color: #5F1854;
+}
+@keyframes cambiar{
+    0%{ margin-top: 0;}
+    20%{ margin-top: 0;}
+
+    25%{ margin-top: -50px;}
+    50%{ margin-top: -50px;}
+
+    55%{ margin-top: -100px;}
+    80%{ margin-top: -100px;}
+
+    85%{ margin-top: -50px;}
+    95%{ margin-top: -50px;}
+
+    100%{ margin-top: 0;}
+}
+.galery{
+    margin-top: 3%;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-gap: 1px;
+    padding: 0px 1px;
+    grid-auto-rows: 1fr;
+}
+.box{
+    padding: 10;
+    color: cornsilk;
+    position: relative;  /*escencial parael efecto del hover-after-before*/
+}
+.box1{
+    grid-area:2/1/4/2;
+}
+.box2{
+    grid-area:1/4/3/5;
+}
+
+.boximg{
+    max-width: 100%;
+    height: 100%;  
+    object-fit: cover;
+}
+
+/*efecto del grid*/
+
+.box::before, .box::after{
+    content: ""; /*inserta un contenido que parezca viñetas*/
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20;
+    bottom: 20;
+    transition: all 0.5s ease-out;
+}
+.box::before{
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: scale(0,1);
+}
+.box::after{
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    transform: scale(1,0);
+}
+.box:hover::before{
+    background-color: rgba(0, 0, 0, 0.747);
+    transform: scale(1,1);
+}
+.box:hover::after{
+    transform: scale(1, 1.0);
+}
+
+/*texto dentro de la imagen en grid*/
+
+.contenedortexto{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    padding: 75px 25px;
+    display: none;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.box:hover .contenedortexto{
+    display: block;
+}
+
+.end{
+    background-color: #323232e8;
+    display: grid;
+    margin-top: 5%;
+    height: 50vh;
+    width: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+.boxend{
+    color: white;
+    text-align: center;
+}
+.boxlogo{
+    grid-area:1/1/3/2;
+    margin-right: 20%;
+    text-align: center;
+    align-self: center; 
+    border-right: 2px solid #f6f6f6;
+}
+.boxlogo img{
+    width: 200px;
+    height: 200px;
+}
+.presentacion{
+    align-self: flex-end;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.presentacion img{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+.presentacion a{
+    color: #f6f6f6;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20;
+}
+.presentacion a:hover{
+    color: #5F1854;
+    cursor: pointer;
+}
+.formu{
+    align-self: center;
+    margin-right: 30%;
+}
+input[type=text]{
+    color: #f6f6f6;
+    font-family: monospace;
+    border: none;
+    border-bottom: 3px solid #11999e;
+    background-color: #11999e00;
+    width: 70%;
+    height: 40px;
+    font-size: 20px;
+    
+}
+input[type=button]{
+    border: none;
+    border-bottom: 3px solid #11999e;
+    background-color: #11999e00;
+    font-size: 20px;
+    padding: 9 20;
+    color: #f6f6f6;
+}
+input[type=button]:hover{
+    background-color: #11999E;
+    border-bottom: 3px solid #5F1854;
+}
